@@ -15,7 +15,8 @@ public class Review {
     private String title;
     private String description;
     private double rating;
-    private int jobId;
+    private int companyId;
+    private int userId;
 
 
 }

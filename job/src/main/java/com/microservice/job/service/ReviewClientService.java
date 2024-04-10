@@ -1,6 +1,5 @@
 package com.microservice.job.service;
 
-import com.microservice.job.DTO.Company;
 import com.microservice.job.DTO.Review;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

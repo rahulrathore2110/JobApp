@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface ReviewDao extends JpaRepository<Review,Integer> {
 
-    List<Review> findByJobId(Integer id);
+    List<Review> findByCompanyId(Integer id);
+    List<Review> findByUserId(Integer id);
 }

@@ -1,5 +1,6 @@
 package com.microservice.company.service;
 
+import com.microservice.company.DTO.CompanyDTO;
 import com.microservice.company.model.Company;
 import org.springframework.stereotype.Service;
 
@@ -10,5 +11,5 @@ public interface CompanyService {
     String createCompany(Company company);
     List<Company> getAllCompany();
 
-    Company getCompanyById(Integer id);
+    CompanyDTO getCompanyById(Integer id);
 }

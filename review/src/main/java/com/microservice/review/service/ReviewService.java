@@ -11,7 +11,10 @@ public interface ReviewService {
     String createReview(Review company);
     List<Review> getAllReview();
 
-    List<Review> getAllReviewById(Integer id);
+    List<Review> getAllReviewByCompanyId(Integer id);
 
     Review getReviewById(Integer id);
+    List<Review> getReviewByUserId(Integer id);
+
+    Review updateReview(Review review);
 }

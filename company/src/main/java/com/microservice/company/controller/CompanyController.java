@@ -1,5 +1,6 @@
 package com.microservice.company.controller;
 
+import com.microservice.company.DTO.CompanyDTO;
 import com.microservice.company.model.Company;
 import com.microservice.company.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,8 @@ public class CompanyController {
         return new ResponseEntity<>(companies, HttpStatus.OK);
     }
     @GetMapping("/{companyId}")
-    ResponseEntity<Company> getCompanyById(@PathVariable Integer companyId){
-        Company company = this.companyService.getCompanyById(companyId);
+    ResponseEntity<CompanyDTO> getCompanyById(@PathVariable Integer companyId){
+        CompanyDTO company = this.companyService.getCompanyById(companyId);
         return new ResponseEntity<>(company, HttpStatus.OK);
     }
 }

@@ -18,23 +18,33 @@ public class ReviewController {
     private ReviewService reviewService;
 
     @PostMapping("/")
-    ResponseEntity<String> createReview(@RequestBody Review company){
-        String review = this.reviewService.createReview(company);
-        return new ResponseEntity<>(review, HttpStatus.CREATED);
+    ResponseEntity<String> createReview(@RequestBody Review review){
+        String review1 = this.reviewService.createReview(review);
+        return new ResponseEntity<>(review1, HttpStatus.CREATED);
     }
 
+    @PutMapping("/")
+    ResponseEntity<Review> updateReview(@RequestBody Review review){
+        Review review1 = this.reviewService.updateReview(review);
+        return new ResponseEntity<>(review1, HttpStatus.ACCEPTED);
+    }
     @GetMapping("/")
     ResponseEntity<List<Review>> getAllReview(){
          List<Review> reviews = this.reviewService.getAllReview();
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
-    @GetMapping("/jobs/{id}")
-    ResponseEntity<List<Review>> getAllReviewById(@PathVariable Integer id){
-        List<Review> reviews = this.reviewService.getAllReviewById(id);
+    @GetMapping("/company/{id}")
+    ResponseEntity<List<Review>> getAllReviewByCompanyId(@PathVariable Integer id){
+        List<Review> reviews = this.reviewService.getAllReviewByCompanyId(id);
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
+    @GetMapping("/user/{id}")
+    ResponseEntity<List<Review>> getAllReviewByUserId(@PathVariable Integer id){
+        List<Review> reviews = this.reviewService.getReviewByUserId(id);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
     @GetMapping("/{id}")
     ResponseEntity<Review> getReviewById(@PathVariable Integer id){
         Review review = this.reviewService.getReviewById(id);
